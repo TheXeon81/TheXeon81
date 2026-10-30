@@ -50,4 +50,4 @@
   <img alt="Contribution snake" src="https://raw.githubusercontent.com/TheXeon81/TheXeon81/output/snake-light.svg">
 </picture>
 
-<p align="center"><sub>Made in Catania 🌋 · uptime is a lifestyle</sub></p>
+<p align="center"><sub>Made in Catania 🌋 · uptime is a lifestyle · last heartbeat <!--hb-->2026-10-31 · 00:00<!--/hb--></sub></p>
