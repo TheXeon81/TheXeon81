@@ -43,11 +43,10 @@
 - 📡 **Omada network tooling** — naming every MAC on the network so nothing stays anonymous
 - 🌐 **[lucianoblancato.it](https://www.lucianoblancato.it)** — my corner of the web, rebuilt with Astro
 
-### 🐍 Contributions
+### 📈 Contributions
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TheXeon81/TheXeon81/output/snake-dark.svg">
-  <img alt="Contribution snake" src="https://raw.githubusercontent.com/TheXeon81/TheXeon81/output/snake-light.svg">
-</picture>
+<p align="center">
+  <img src="https://ghchart.rshah.org/22d3ee/TheXeon81" alt="Contribution graph" width="100%">
+</p>
 
-<p align="center"><sub>Made in Catania 🌋 · uptime is a lifestyle · last heartbeat <!--hb-->2026-10-31 · 00:00<!--/hb--><!--next:0--></sub></p>
+<p align="center"><sub>Made in Catania 🌋 · uptime is a lifestyle · last heartbeat <!--hb-->2026-10-31 · 00:00<!--/hb--></sub></p>
