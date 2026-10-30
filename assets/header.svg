@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b18"/>
+      <stop offset="1" stop-color="#101935"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee">
+        <animate attributeName="stop-color" values="#22d3ee;#a78bfa;#f472b6;#22d3ee" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1" stop-color="#a78bfa">
+        <animate attributeName="stop-color" values="#a78bfa;#f472b6;#22d3ee;#a78bfa" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".04"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1200" height="320" rx="22"/></clipPath>
+  </defs>
+
+  <style>
+    .t { font-family: 'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+    .mono { font-family: 'Cascadia Code', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; }
+    .role { opacity: 0; animation: role 9s infinite; }
+    .r2 { animation-delay: 3s; }
+    .r3 { animation-delay: 6s; }
+    @keyframes role {
+      0%   { opacity: 0; transform: translateY(12px); }
+      5%, 28% { opacity: 1; transform: translateY(0); }
+      33%, 100% { opacity: 0; transform: translateY(-12px); }
+    }
+    .edge { stroke: #7dd3fc; stroke-opacity: .22; stroke-width: 1.5; stroke-dasharray: 4 6; animation: flow 3s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -40; } }
+    .ring { fill: none; stroke: #22d3ee; transform-box: fill-box; transform-origin: center; animation: ping 3s ease-out infinite; }
+    @keyframes ping { 0% { transform: scale(.6); opacity: .9; } 100% { transform: scale(2.6); opacity: 0; } }
+    .cursor { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="320" fill="url(#bg)"/>
+
+    <!-- drifting colour blobs -->
+    <g filter="url(#blur)" opacity=".55">
+      <circle cx="200" cy="80" r="140" fill="#6366f1">
+        <animate attributeName="cx" values="200;420;200" dur="14s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="80;220;80" dur="11s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="950" cy="260" r="160" fill="#06b6d4">
+        <animate attributeName="cx" values="950;760;950" dur="12s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="620" cy="-20" r="120" fill="#db2777">
+        <animate attributeName="cy" values="-20;120;-20" dur="16s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <rect width="1200" height="320" fill="url(#grid)"/>
+
+    <!-- network topology -->
+    <g>
+      <path class="edge" d="M820 90L950 60M950 60L1090 110M820 90L880 205M950 60L880 205M1090 110L1020 225M880 205L1020 225M1020 225L1130 270M880 205L770 265M1090 110L1130 270"/>
+
+      <g fill="#a5f3fc" filter="url(#glow)">
+        <circle r="3"><animateMotion dur="2.4s" repeatCount="indefinite" path="M820 90L950 60L1090 110"/></circle>
+        <circle r="3" fill="#f9a8d4"><animateMotion dur="3.1s" repeatCount="indefinite" path="M770 265L880 205L1020 225L1130 270"/></circle>
+        <circle r="3" fill="#c4b5fd"><animateMotion dur="2.7s" repeatCount="indefinite" path="M950 60L880 205L820 90"/></circle>
+        <circle r="3"><animateMotion dur="3.6s" repeatCount="indefinite" path="M1130 270L1090 110L1020 225L880 205"/></circle>
+      </g>
+
+      <g>
+        <circle class="ring" cx="950" cy="60" r="10"/>
+        <circle class="ring" cx="880" cy="205" r="10" style="animation-delay:1s"/>
+        <circle class="ring" cx="1130" cy="270" r="10" style="animation-delay:2s"/>
+      </g>
+      <g fill="#0b1226" stroke="#67e8f9" stroke-width="2">
+        <rect x="806" y="78" width="28" height="24" rx="5"/>
+        <circle cx="950" cy="60" r="9"/>
+        <rect x="1076" y="98" width="28" height="24" rx="5"/>
+        <circle cx="880" cy="205" r="11"/>
+        <rect x="1006" y="213" width="28" height="24" rx="5"/>
+        <circle cx="1130" cy="270" r="8"/>
+        <circle cx="770" cy="265" r="8"/>
+      </g>
+      <g class="mono" font-size="11" fill="#7dd3fc" fill-opacity=".7">
+        <text x="838" y="74">esxi-01</text>
+        <text x="964" y="50">fw-core</text>
+        <text x="1108" y="94">veeam</text>
+        <text x="898" y="228">sql</text>
+        <text x="1040" y="252">site-b</text>
+      </g>
+    </g>
+
+    <!-- text -->
+    <text class="mono" x="80" y="92" font-size="18" fill="#67e8f9">~$ whoami<tspan class="cursor">_</tspan></text>
+    <text class="t" x="78" y="160" font-size="66" font-weight="800" fill="url(#ink)" letter-spacing="-1">Luciano Blancato</text>
+
+    <g class="t" font-size="28" font-weight="600" fill="#e2e8f0">
+      <text class="role r1" x="80" y="210">IT Manager · 15+ years in the trenches</text>
+      <text class="role r2" x="80" y="210">Infrastructure, Backup &amp; Cybersecurity</text>
+      <text class="role r3" x="80" y="210">Developer · Python · C# · PHP</text>
+    </g>
+
+    <text class="t" x="80" y="262" font-size="16" fill="#94a3b8">📍 Catania, Italy  ·  VMware · Veeam · Fortinet · NIS2 / ISO 27001</text>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="319" rx="22" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
+</svg>

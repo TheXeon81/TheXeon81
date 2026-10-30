@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="390" viewBox="0 0 900 390">
+<style>
+  text { font-family: 'Cascadia Code', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: 16px; }
+  .blink { animation: b 1s steps(1) infinite; }
+  @keyframes b { 50% { opacity: 0; } }
+</style>
+<rect width="900" height="390" rx="14" fill="#0b1020"/>
+<rect x=".5" y=".5" width="899" height="389" rx="14" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+<path d="M0 14a14 14 0 0 1 14-14h872a14 14 0 0 1 14 14v26H0z" fill="#151c33"/>
+<circle cx="24" cy="20" r="6" fill="#ff5f57"/><circle cx="44" cy="20" r="6" fill="#febc2e"/><circle cx="64" cy="20" r="6" fill="#28c840"/>
+<text x="450.0" y="25" text-anchor="middle" fill="#64748b" style="font-size:13px">luciano@catania: ~ — bash</text>
+<clipPath id="c0"><rect x="26" y="62" height="28" width="0"><animate attributeName="width" dur="16.0s" repeatCount="indefinite" values="0;0;182.4;244.0;244.0" keyTimes="0;0.0499;0.0500;0.0725;1"/></rect></clipPath>
+<text x="28" y="80" clip-path="url(#c0)" xml:space="preserve"><tspan fill="#4ade80">luciano@catania</tspan><tspan fill="#94a3b8">:</tspan><tspan fill="#60a5fa">~</tspan><tspan fill="#94a3b8">$ </tspan><tspan fill="#f8fafc">whoami</tspan></text>
+<clipPath id="c1"><rect x="26" y="90" height="28" width="0"><animate attributeName="width" dur="16.0s" repeatCount="indefinite" values="0;0;397.6;397.6" keyTimes="0;0.1005;0.1006;1"/></rect></clipPath>
+<text x="28" y="108" clip-path="url(#c1)" xml:space="preserve"><tspan fill="#cbd5e1">Luciano Blancato — IT Manager &amp; Developer</tspan></text>
+<clipPath id="c2"><rect x="26" y="118" height="28" width="0"><animate attributeName="width" dur="16.0s" repeatCount="indefinite" values="0;0;182.4;311.2;311.2" keyTimes="0;0.1287;0.1288;0.1775;1"/></rect></clipPath>
+<text x="28" y="136" clip-path="url(#c2)" xml:space="preserve"><tspan fill="#4ade80">luciano@catania</tspan><tspan fill="#94a3b8">:</tspan><tspan fill="#60a5fa">~</tspan><tspan fill="#94a3b8">$ </tspan><tspan fill="#f8fafc">cat focus.txt</tspan></text>
+<clipPath id="c3"><rect x="26" y="146" height="28" width="0"><animate attributeName="width" dur="16.0s" repeatCount="indefinite" values="0;0;599.2;599.2" keyTimes="0;0.2055;0.2056;1"/></rect></clipPath>
+<text x="28" y="164" clip-path="url(#c3)" xml:space="preserve"><tspan fill="#cbd5e1">Infrastructure · Cybersecurity (NIS2 / ISO 27001) · Automation</tspan></text>
+<clipPath id="c4"><rect x="26" y="174" height="28" width="0"><animate attributeName="width" dur="16.0s" repeatCount="indefinite" values="0;0;182.4;282.4;282.4" keyTimes="0;0.2337;0.2338;0.2712;1"/></rect></clipPath>
+<text x="28" y="192" clip-path="url(#c4)" xml:space="preserve"><tspan fill="#4ade80">luciano@catania</tspan><tspan fill="#94a3b8">:</tspan><tspan fill="#60a5fa">~</tspan><tspan fill="#94a3b8">$ </tspan><tspan fill="#f8fafc">ls ~/stack</tspan></text>
+<clipPath id="c5"><rect x="26" y="202" height="28" width="0"><animate attributeName="width" dur="16.0s" repeatCount="indefinite" values="0;0;628.0;628.0" keyTimes="0;0.2993;0.2994;1"/></rect></clipPath>
+<text x="28" y="220" clip-path="url(#c5)" xml:space="preserve"><tspan fill="#cbd5e1">vmware  veeam  fortinet  sqlserver  informix  python  csharp  php</tspan></text>
+<clipPath id="c6"><rect x="26" y="230" height="28" width="0"><animate attributeName="width" dur="16.0s" repeatCount="indefinite" values="0;0;182.4;244.0;244.0" keyTimes="0;0.3274;0.3275;0.3500;1"/></rect></clipPath>
+<text x="28" y="248" clip-path="url(#c6)" xml:space="preserve"><tspan fill="#4ade80">luciano@catania</tspan><tspan fill="#94a3b8">:</tspan><tspan fill="#60a5fa">~</tspan><tspan fill="#94a3b8">$ </tspan><tspan fill="#f8fafc">uptime</tspan></text>
+<clipPath id="c7"><rect x="26" y="258" height="28" width="0"><animate attributeName="width" dur="16.0s" repeatCount="indefinite" values="0;0;608.8;608.8" keyTimes="0;0.3780;0.3781;1"/></rect></clipPath>
+<text x="28" y="276" clip-path="url(#c7)" xml:space="preserve"><tspan fill="#cbd5e1">15+ years · 200+ endpoints · multi-site, multi-brand automotive</tspan></text>
+<clipPath id="c8"><rect x="26" y="286" height="28" width="0"><animate attributeName="width" dur="16.0s" repeatCount="indefinite" values="0;0;182.4;292.0;292.0" keyTimes="0;0.4062;0.4063;0.4475;1"/></rect></clipPath>
+<text x="28" y="304" clip-path="url(#c8)" xml:space="preserve"><tspan fill="#4ade80">luciano@catania</tspan><tspan fill="#94a3b8">:</tspan><tspan fill="#60a5fa">~</tspan><tspan fill="#94a3b8">$ </tspan><tspan fill="#f8fafc">echo $MOTTO</tspan></text>
+<clipPath id="c9"><rect x="26" y="314" height="28" width="0"><animate attributeName="width" dur="16.0s" repeatCount="indefinite" values="0;0;407.2;407.2" keyTimes="0;0.4755;0.4756;1"/></rect></clipPath>
+<text x="28" y="332" clip-path="url(#c9)" xml:space="preserve"><tspan fill="#fbbf24">"If it isn't backed up, it doesn't exist."</tspan></text>
+<g opacity="0">
+  <animate attributeName="opacity" dur="16.0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;0.5037;0.5038;1"/>
+  <text x="28" y="360"><tspan fill="#4ade80">luciano@catania</tspan><tspan fill="#94a3b8">:</tspan><tspan fill="#60a5fa">~</tspan><tspan fill="#94a3b8">$ </tspan><tspan class="blink" fill="#f8fafc">█</tspan></text>
+</g>
+</svg>
