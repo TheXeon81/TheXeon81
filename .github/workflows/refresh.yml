@@ -1,0 +1,67 @@
+name: daily refresh
+
+# Runs once a day at a random time between 01:00 and 05:00 (Europe/Rome).
+# Cron is UTC and can't randomize, so it wakes up hourly through the night,
+# picks today's hour from the date, then sleeps a random number of minutes.
+on:
+  schedule:
+    - cron: "7 22,23,0,1,2,3,4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decide whether today's slot has come
+        id: gate
+        run: |
+          today=$(TZ=Europe/Rome date +%F)
+          hour=$(TZ=Europe/Rome date +%-H)
+          target=$(( 1 + $(printf %s "$today" | cksum | cut -d' ' -f1) % 4 ))
+          last=$(grep -oP '<!--hb-->\K[0-9-]+' README.md || echo none)
+          echo "today=$today hour=$hour target=$target last=$last"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"; echo "wait=0" >> "$GITHUB_OUTPUT"
+          elif [ "$last" != "$today" ] && [ "$hour" -ge "$target" ] && [ "$hour" -le 6 ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"; echo "wait=$(( RANDOM % 50 ))" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Random delay
+        if: steps.gate.outputs.go == 'true'
+        run: sleep $(( ${{ steps.gate.outputs.wait }} * 60 ))
+
+      - uses: Platane/snk@v3
+        if: steps.gate.outputs.go == 'true'
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-dark.svg?palette=github-dark&color_snake=#22d3ee&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
+            dist/snake-light.svg?color_snake=#7c3aed
+
+      - uses: crazy-max/ghaction-github-pages@v4
+        if: steps.gate.outputs.go == 'true'
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update heartbeat in README
+        if: steps.gate.outputs.go == 'true'
+        run: |
+          stamp=$(TZ=Europe/Rome date '+%F · %H:%M')
+          sed -i "s|<!--hb-->.*<!--/hb-->|<!--hb-->$stamp<!--/hb-->|" README.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "heartbeat $stamp" && git push
